@@ -1,41 +1,34 @@
 Current Version: 1.0
 ===============================
-
-The folder contains our ReKognition Android SDKs (RekoSDK.java under folder named SDK). 
-
-
-
+This Java SDK is intent for developers who want to integrate ReKognition API into their 
+Android application. The folder contains our ReKognition Android SDKs (RekoSDK.java under folder named SDK). 
 For more information about our ReKognition API, please read our 
 <a href="http://v2.rekognition.com/developer/docs">documentation</a>.
 
+Each public function in this class represents an API call. Every time you call a function, it will send API request and 
+wait for response in another thread, and call the callback function your passed in once the response is received.
 
-This Java SDK is intent for develops who wants to integrate Rekognition API into their 
-Android application. Each public function in this class represents an API call.
-Every time you call a function, it will send API request and 
-wait for response in another thread, and call the callback function your passed in 
-once the response is received.
 Usage:
+===============================
   <ol>
-  <li>  1. Update the value of sAPI_KEY and sAPI_SECRET to your API key and API secret. </li>
-  <pre><code>
-  static private String sAPI_KEY = "YourAPIKEY";
-	static private String sAPI_SECRET = "YourAPISecret";
+  <li>  Update the value of sAPI_KEY and sAPI_SECRET to your API key and API secret. </li>
+  <pre><code>static private String sAPI_KEY = "YourAPIKEY";
+  static private String sAPI_SECRET = "YourAPISecret";
   </code></pre>
-  <li>  2. Create a callback object with the callback function. </li>
+  <li>  Create a callback object with the callback function. </li>
      For example: 
-     <pre><code>
-     RekoSDK.APICallback callback = new RekoSDK.APICallback(){
+     <pre><code>RekoSDK.APICallback callback = new RekoSDK.APICallback(){
 		public void gotResponse(String sResponse){
 			print(sResponse);
 		}
-	};
-    </code></pre>
-  <li>  3. Call it in your code as simple as </li>
-     Reko.face_train(callback);
-     and You're done!
+	};</code></pre>
+  <li>  Call it in your code as simple as </li>
+     <pre><code>Reko.face_train(callback); </code></pre>
+     and you're done!
   </ol>
 
-Examples:
+Example:
+===============================
    Under Example folder, we have a demo Android project that contains very basic example of how 
 to use the RekoSDK.
 
